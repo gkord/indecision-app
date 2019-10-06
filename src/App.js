@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Header from "./Header";
+import Action from "./Action";
+import Options from "./Options";
+import AddOption from "./AddOption";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  render() {
+
+    const title = "Indecision"
+    const subtitle = "Put your life in the hands of a computer";
+    const options = ['Option 1', 'Option 2', 'Option 3']
+
+    return (
+      <div>
+       <Header title={title} subtitle={subtitle} />
+       <Action />
+       <Options options={options} />
+       <AddOption />
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
