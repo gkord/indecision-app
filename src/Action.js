@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Action extends Component {
-    render() {
-        return (
-            <div>
-                <button>What Should I Do?</button>
-            </div>
-        )
-    }
+  handlePick = () => {
+    alert("picked");
+  };
+  render() {
+    return (
+      <div>
+        <button onClick={this.handlePick}>What Should I Do?</button>
+      </div>
+    );
+  }
 }
 
-export default Action
+export default Action;
