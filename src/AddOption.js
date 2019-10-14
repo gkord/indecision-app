@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 class AddOption extends Component {
+  constructor(props){
+    super(props)
+  }
   handleAddOption = e => {
     e.preventDefault();
     const option = e.target.elements.option.value.trim()
     if (option) {
-        alert(option)
+        this.props.handleAddOption(option)
     }
   };
   render() {
