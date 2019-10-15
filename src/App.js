@@ -3,12 +3,15 @@ import Header from "./components/Header";
 import Action from "./components/Action";
 import Options from "./components/Options";
 import AddOption from "./components/AddOption";
+import OptionModal from "./components/OptionModal";
+import "./styles/App.scss"
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      options: []
+      options: [],
+      selectedOption: undefined
     };
   }
 
@@ -30,7 +33,9 @@ class App extends Component {
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    this.setState({
+      selectedOption: option
+    })
   };
 
   //method that allows user to add an option
@@ -42,6 +47,12 @@ class App extends Component {
     }
     this.setState(prevState => ({ options: prevState.options.concat(option) }));
   };
+
+  clearSelectedOption = () => {
+    this.setState({
+      selectedOption: undefined
+    })
+  }
 
   componentDidMount() {
     //persist data locally
@@ -84,6 +95,10 @@ class App extends Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
+        <OptionModal 
+        selectedOption={this.state.selectedOption}
+        clearSelectedOption={this.clearSelectedOption}
+         />
       </div>
     );
   }
