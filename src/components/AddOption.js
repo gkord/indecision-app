@@ -7,14 +7,18 @@ class AddOption extends Component {
       error: undefined
     };
   }
+  //method that allows us to add option and sets it to state
   handleAddOption = e => {
     e.preventDefault();
     const option = e.target.elements.option.value.trim();
     const error = this.props.handleAddOption(option);
 
-    this.setState(() => {
-      return { error };
-    });
+    this.setState(() => ({ error }));
+
+    //clear input if no error
+    if (!error) {
+      e.target.elements.option.value = "";
+    }
   };
   render() {
     return (
