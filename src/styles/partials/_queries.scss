@@ -1,0 +1,16 @@
+@media (max-width: 450px) {
+  .header {
+    margin-bottom: 1.2rem;
+  }
+
+  .big-button {
+      margin-bottom: 1.6rem;
+  }
+  .add-option {
+    flex-direction: column;
+  }
+
+  .add-option__input {
+    margin: 0 0 1.2rem 0;
+  }
+}
