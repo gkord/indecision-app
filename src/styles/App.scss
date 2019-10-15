@@ -1,3 +1,9 @@
-html {
-    background: green;
-}
+@import "./partials/variablesMixins";
+@import "./partials/setup";
+@import "./partials/global";
+@import "./partials/header";
+@import "./partials/add-option";
+@import "./partials/button";
+@import "./partials/option";
+@import "./partials/widget";
+@import "./partials/modal";
